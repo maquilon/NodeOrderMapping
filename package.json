@@ -1,0 +1,25 @@
+{
+  "name": "nodeordermapping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maquilon/NodeOrderMapping.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maquilon/NodeOrderMapping/issues"
+  },
+  "homepage": "https://github.com/maquilon/NodeOrderMapping#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "express-decorator": "^1.1.0",
+    "mongoist": "^1.7.2",
+    "mongojs": "^2.5.0"
+  }
+}
