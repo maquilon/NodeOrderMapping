@@ -1,0 +1,382 @@
+{
+    "_id" : ObjectId("56d7a737da181f3c00f32a5f"),
+    "userId" : "56668538ba8113d1dddef65c",
+    "userName" : "Leah Engel",
+    "status" : "complete",
+    "created" : ISODate("2016-03-03T02:53:43.197Z"),
+    "modified" : ISODate("2016-06-21T14:38:07.461Z"),
+    "shipping" : 399,
+    "tax" : 1669,
+    "total" : 25850,
+    "vendor" : {
+        "items" : [ 
+            {
+                "itemId" : "0307261077",
+                "description" : "I Like Bugs (Step-Into-Reading, Step 1)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0064436160",
+                "description" : "Biscuit Goes to School (My First I Can Read)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0061702234",
+                "description" : "Mittens at School (My First I Can Read)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0060546611",
+                "description" : "Mittens (My First I Can Read)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0064442764",
+                "description" : "Chicken Said, \"Cluck!\" (My First I Can Read)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0061177563",
+                "description" : "Scat, Cat! (My First I Can Read)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0064442314",
+                "description" : "Go Away, Dog (My First I Can Read)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0064442497",
+                "description" : "I See, You Saw (My First I Can Read)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0152050922",
+                "description" : "Rick Is Sick (Green Light Readers Level 1)",
+                "quantity" : 1,
+                "price" : 395
+            }, 
+            {
+                "itemId" : "1601153244",
+                "description" : "Where Is My Frog? (We Read Phonics - Level 2 (Quality))",
+                "quantity" : 1,
+                "price" : 499
+            }, 
+            {
+                "itemId" : "0590259458",
+                "description" : "What is That? Said the Cat (Scholastic Hello Reader, Level 1)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0439773539",
+                "description" : "I Won't Share (Scholastic Reader, Level 1)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0545134749",
+                "description" : "Scholastic Reader Level 1: Noodles: I Love School: I Love School!",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0545244714",
+                "description" : "Scholastic Reader Pre-Level 1: Gus Gets Scared",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "158925113X",
+                "description" : "I Want a Pet!",
+                "quantity" : 0,
+                "price" : 1295
+            }, 
+            {
+                "itemId" : "0823981134",
+                "description" : "Bats, Bats, Bats (Rosen Real Readers: Early Emergent)",
+                "quantity" : 1,
+                "price" : 515
+            }, 
+            {
+                "itemId" : "0544568036",
+                "description" : "Little Blue Truck board book",
+                "quantity" : 1,
+                "price" : 428
+            }, 
+            {
+                "itemId" : "0694006246",
+                "description" : "Big Red Barn",
+                "quantity" : 1,
+                "price" : 419
+            }, 
+            {
+                "itemId" : "0394862546",
+                "description" : "Farm Animals (A Chunky Book(R))",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0394832477",
+                "description" : "The Little Duck (Pictureback(R))",
+                "quantity" : 1,
+                "price" : 325
+            }, 
+            {
+                "itemId" : "0064451879",
+                "description" : "Ducks Don't Get Wet",
+                "quantity" : 1,
+                "price" : 599
+            }, 
+            {
+                "itemId" : "0736881948",
+                "description" : "Bird Eggs (Birds)",
+                "quantity" : 1,
+                "price" : 629
+            }, 
+            {
+                "itemId" : "073688193X",
+                "description" : "Baby Birds",
+                "quantity" : 1,
+                "price" : 589
+            }, 
+            {
+                "itemId" : "0736891471",
+                "description" : "Horses (All about Pets)",
+                "quantity" : 1,
+                "price" : 629
+            }, 
+            {
+                "itemId" : "0516274937",
+                "description" : "Dirty Larry (Revised Edition)",
+                "quantity" : 1,
+                "price" : 495
+            }, 
+            {
+                "itemId" : "0516273817",
+                "description" : "All Kinds of Kids (Rookie Readers: Level A (Paperback))",
+                "quantity" : 1,
+                "price" : 495
+            }, 
+            {
+                "itemId" : "0531268047",
+                "description" : "Snow Joe (Rookie Ready to Learn: Seasons and Weather (Paperback))",
+                "quantity" : 1,
+                "price" : 595
+            }, 
+            {
+                "itemId" : "1601153201",
+                "description" : "Whales (We Read Phonics - Level 3 (Quality))",
+                "quantity" : 1,
+                "price" : 499
+            }, 
+            {
+                "itemId" : "1601153341",
+                "description" : "If I Had a Snake (We Read Phonics - Level 4 (Paperback)) (We Read Phonics - Level 4 (Quality))",
+                "quantity" : 1,
+                "price" : 499
+            }, 
+            {
+                "itemId" : "1601153287",
+                "description" : "Ant in Her Pants (We Read Phonics - Level 3 (Quality))",
+                "quantity" : 1,
+                "price" : 499
+            }, 
+            {
+                "itemId" : "1601153260",
+                "description" : "Bugs on the Bus (We Read Phonics - Level 2 (Quality))",
+                "quantity" : 1,
+                "price" : 499
+            }, 
+            {
+                "itemId" : "1601153147",
+                "description" : "Big Cats (We Read Phonics - Level 1 (Quality))",
+                "quantity" : 1,
+                "price" : 499
+            }, 
+            {
+                "itemId" : "1601153163",
+                "description" : "Matt and Sid (We Read Phonics - Level 1 (Quality))",
+                "quantity" : 1,
+                "price" : 499
+            }, 
+            {
+                "itemId" : "1601153120",
+                "description" : "Pat, Cat, and Rat (We Read Phonics - Level 1 (Quality))",
+                "quantity" : 1,
+                "price" : 499
+            }, 
+            {
+                "itemId" : "051627046X",
+                "description" : "Bugs! (Rookie Readers: Level B (Paperback))",
+                "quantity" : 1,
+                "price" : 495
+            }, 
+            {
+                "itemId" : "0516270761",
+                "description" : "Hello, Doctor (Rookie Readers: Level A (Paperback))",
+                "quantity" : 1,
+                "price" : 495
+            }, 
+            {
+                "itemId" : "0516270753",
+                "description" : "Cats! (Rookie Readers Level A)",
+                "quantity" : 1,
+                "price" : 495
+            }, 
+            {
+                "itemId" : "0590397931",
+                "description" : "Where Do Insects Live? (Science Emergent Readers)",
+                "quantity" : 1,
+                "price" : 1
+            }, 
+            {
+                "itemId" : "0062294296",
+                "description" : "Splat the Cat and the Late Library Book",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0553533916",
+                "description" : "Go! Go! Go! Stop!",
+                "quantity" : 1,
+                "price" : 570
+            }, 
+            {
+                "itemId" : "0544313615",
+                "description" : "Ball",
+                "quantity" : 1,
+                "price" : 645
+            }, 
+            {
+                "itemId" : "0152060510",
+                "description" : "What Will Fat Cat Sit On?",
+                "quantity" : 1,
+                "price" : 1002
+            }, 
+            {
+                "itemId" : "0064442128",
+                "description" : "Biscuit (My First I Can Read)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0823426386",
+                "description" : "See Me Run (I Like to Read)",
+                "quantity" : 1,
+                "price" : 699
+            }, 
+            {
+                "itemId" : "0823430588",
+                "description" : "Car Goes Far (I Like to Read) (I Like to Read Books)",
+                "quantity" : 1,
+                "price" : 699
+            }, 
+            {
+                "itemId" : "0823427560",
+                "description" : "I Will Try (I Like to Read Books)",
+                "quantity" : 1,
+                "price" : 699
+            }, 
+            {
+                "itemId" : "082343057X",
+                "description" : "See Me Dig (I Like to Read) (I Like to Read Books)",
+                "quantity" : 1,
+                "price" : 699
+            }, 
+            {
+                "itemId" : "0152050949",
+                "description" : "Todd's Box (Green Light Readers Level 1)",
+                "quantity" : 1,
+                "price" : 395
+            }, 
+            {
+                "itemId" : "0679881263",
+                "description" : "Big Egg (Step-Into-Reading, Step 1)",
+                "quantity" : 1,
+                "price" : 399
+            }, 
+            {
+                "itemId" : "0375870830",
+                "description" : "Robot, Go Bot! (Step into Reading Comic Reader)",
+                "quantity" : 1,
+                "price" : 399
+            }
+        ],
+        "vendorName" : "Amazon Inc.",
+        "vendorId" : "55fa1e4398eb4b0c07afaf29",
+        "purchaseOrderNumber" : "N/A",
+        "vendorOrderId" : 113273,
+        "returningItems" : [ 
+            {
+                "itemId" : "158925113X",
+                "quantity" : 1,
+                "price" : 1295,
+                "description" : "I Want a Pet!",
+                "status" : "canceled",
+                "taxRefund" : 91
+            }
+        ],
+        "cogs_discount" : 0
+    },
+    "schoolId" : "55e4dde5c588d547062c13e1",
+    "districtId" : "55e4dde5c588d547062c13b7",
+    "title" : "Amazon Inc. Order",
+    "discount" : 0,
+    "type" : "internal",
+    "completed" : ISODate("2016-03-03T02:57:56.318Z"),
+    "distributions" : [ 
+        {
+            "id" : "56706b76a9dc843306c95fe1",
+            "amount" : -23974
+        }, 
+        {
+            "id" : "579a40549cec5f1a33012cea",
+            "amount" : -1876
+        }
+    ],
+    "initialTotal" : 27236,
+    "orderManagementStatus" : "items_canceled",
+    "initialDistributions" : [ 
+        {
+            "id" : "56706b76a9dc843306c95fe1",
+            "amount" : -25360
+        }, 
+        {
+            "id" : "579a40549cec5f1a33012cea",
+            "amount" : -1876
+        }
+    ],
+    "history" : [ 
+        {
+            "returningItems" : [ 
+                {
+                    "itemId" : "158925113X",
+                    "quantity" : 1,
+                    "price" : 1295,
+                    "description" : "I Want a Pet!",
+                    "status" : "canceled",
+                    "taxRefund" : 91
+                }
+            ],
+            "action" : "cancel_order_item",
+            "transactionStepId" : ObjectId("5769514f17f5f71f0096af8a"),
+            "notes" : "item Id: 158925113X, quantity: 1",
+            "date" : ISODate("2016-06-21T14:38:07.462Z"),
+            "distributions" : [ 
+                {
+                    "id" : "56706b76a9dc843306c95fe1",
+                    "amount" : 1386
+                }
+            ]
+        }
+    ]
+}
