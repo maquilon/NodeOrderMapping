@@ -55,11 +55,6 @@ function getOrderDetail(order) {
     return orderDetail;
 }
 
-// function getVendor(order) {
-//     let vendorInfo = [];
-//     order.ve
-// }
-
 function getReturningItems(order) {
     let distributions = [];
     order.distributions.forEach((distribution, i) => {
@@ -119,8 +114,23 @@ function getHistory(order) {
     return history;
 }
 
-findOrders()
-    .then(orders => mappingOrder(orders))
-    .then(order  => saveNewOrder(order))
-    .then(result => console.log('result --->', result))
-    .catch(e => console.log('Error -->', e))
+// findOrders()
+//     .then(orders => mappingOrder(orders))
+//     .then(order  => saveNewOrder(order))
+//     .then(result => console.log('result --->', result))
+//     .catch(e => console.log('Error -->', e))
+
+
+async function start() {
+    try{
+        let orders = await findOrders(); 
+        let newOrder = await saveNewOrder(orders);
+        let order = await mappingOrder(orders);
+        console.log(order);
+    }catch(err){
+        console.log(err);
+    }
+    process.exit();
+}
+
+start();
