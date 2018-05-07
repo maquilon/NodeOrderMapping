@@ -8,7 +8,7 @@ async function findOrders()  {
         ]);   
 }
 
-async function readOrder(orders) {
+async function mappingOrder(orders) {
     let newOrder = {};
     orders.forEach((order,i) => {
         newOrder = getOrderDetail(order);
@@ -113,7 +113,7 @@ function getHistory(order) {
 }
 
 findOrders()
-    .then(orders => readOrder(orders))
+    .then(orders => mappingOrder(orders))
     .then(order  => saveNewOrder(order))
     .then(result => console.log('result --->', result))
     .catch(e => console.log('Error -->', e))
