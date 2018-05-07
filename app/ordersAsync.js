@@ -8,40 +8,49 @@ async function findOrders()  {
         ]);   
 }
 
-async function createNewOrder(orders) {
+async function readOrder(orders) {
     let newOrder = {};
     orders.forEach((order,i) => {
-        newOrder = {
-            "userId" : order.userId,
-            "userName" : order.userName,
-            "status" : order.status,
-            "created" : order.created,
-            "modified" : order.modified,
-            "shipping" : order.shipping,
-            "tax" : order.tax,
-            "total" : order.total,
-            //"vendor" : order.vendor
-            "vendorName" : order.vendorName,
-            "vendorId" : order.vendorId,
-            "purchaseOrderNumber" : order.purchaseOrderNumber,
-            "vendorOrderId" : order.vendorOrderId, 
-            "schoolId" : order.schoolId,
-            "districtId" : order.districtId,
-            "title" : order.title,
-            "discount" : order.discount,
-            "type" : order.type,
-            "completed" : order.completed, 
-            //distributions
-            "initialTotal" : order.initialTotal,
-            "orderManagementStatus" : order.orderManagementStatus,      
-        }
-
+        newOrder = getOrderDetail(order);
         newOrder.distributions = getReturningItems(order);
         newOrder.initialDistributions = getInitialDistributions(order);   
         newOrder.history = getHistory(order);    
     })
 
     return newOrder
+}
+
+async function saveNewOrder(order) {
+    return await db.testOrder.insert(order);
+}
+
+function getOrderDetail(order) {
+    let orderDetail = [];
+    orderDetail = {
+        "userId" : order.userId,
+        "userName" : order.userName,
+        "status" : order.status,
+        "created" : order.created,
+        "modified" : order.modified,
+        "shipping" : order.shipping,
+        "tax" : order.tax,
+        "total" : order.total,
+        //"vendor" : order.vendor
+        "vendorName" : order.vendorName,
+        "vendorId" : order.vendorId,
+        "purchaseOrderNumber" : order.purchaseOrderNumber,
+        "vendorOrderId" : order.vendorOrderId, 
+        "schoolId" : order.schoolId,
+        "districtId" : order.districtId,
+        "title" : order.title,
+        "discount" : order.discount,
+        "type" : order.type,
+        "completed" : order.completed, 
+        //distributions
+        "initialTotal" : order.initialTotal,
+        "orderManagementStatus" : order.orderManagementStatus,      
+    }
+    return orderDetail;
 }
 
 function getReturningItems(order) {
@@ -88,7 +97,7 @@ function getHistory(order) {
                 "taxRefund" : ret.taxRefund * -1
             }
         })
-        history.returningItems = returningItems;
+        history[i].returningItems = returningItems;
 
         // distributions
         let distributions = [];
@@ -98,12 +107,13 @@ function getHistory(order) {
                 "amount": dis.amount * -1
             }
         })
-        history.distributions = distributions;
+        history[i].distributions = distributions;
     })
     return history;
 }
 
 findOrders()
-    .then(orders => createNewOrder(orders))
+    .then(orders => readOrder(orders))
+    .then(order  => saveNewOrder(order))
     .then(result => console.log('result --->', result))
     .catch(e => console.log('Error -->', e))
