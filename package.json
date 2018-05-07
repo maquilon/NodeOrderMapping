@@ -19,6 +19,7 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "express-decorator": "^1.1.0",
+    "mocha": "^5.1.1",
     "mongoist": "^1.7.2",
     "mongojs": "^2.5.0"
   }

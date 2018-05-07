@@ -12,6 +12,7 @@ async function mappingOrder(orders) {
     let newOrder = {};
     orders.forEach((order,i) => {
         newOrder = getOrderDetail(order);
+        newOrder.vendor = order.vendor;
         newOrder.distributions = getReturningItems(order);
         newOrder.initialDistributions = getInitialDistributions(order);   
         newOrder.history = getHistory(order);    
@@ -53,6 +54,11 @@ function getOrderDetail(order) {
     }
     return orderDetail;
 }
+
+// function getVendor(order) {
+//     let vendorInfo = [];
+//     order.ve
+// }
 
 function getReturningItems(order) {
     let distributions = [];
