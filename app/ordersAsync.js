@@ -21,6 +21,7 @@ async function mappingOrder(orders) {
 }
 
 async function saveNewOrder(order) {
+    // Saving the new order in a temporary collection called testOrder
     return await db.testOrder.insert(order);
 }
 
