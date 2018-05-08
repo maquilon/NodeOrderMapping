@@ -1,0 +1,55 @@
+{
+    "_id" : {
+        "customId" : "5af1ae49121e1b7c6749a2e8",
+        "date" : "2017-09-01",
+        "title" : "Amazon Inc. Order",
+        "schoolId" : "55e4ddcfc588d547062baac6",
+        "districtId" : "55e4ddcfc588d547062baaaf",
+        "discount" : 0,
+        "userName" : "Jamie Barnes",
+        "status" : "complete",
+        "userId" : "596646deba8113d1dddf3a05",
+        "type" : "internal",
+        "vendorOrderId" : 206795,
+        "vendorId" : "55fa1e4398eb4b0c07afaf29",
+        "purchaseOrderNumber" : "N/A",
+        "returnedTax" : 0.0,
+        "shipping" : 0.0,
+        "tax" : 0,
+        "subTtotal" : -8197.0
+    },
+    "order" : {
+        "title" : "Amazon Inc. Order",
+        "schoolId" : "55e4ddcfc588d547062baac6",
+        "districtId" : "55e4ddcfc588d547062baaaf",
+        "discount" : 0,
+        "userName" : "Jamie Barnes",
+        "status" : "complete",
+        "userId" : "596646deba8113d1dddf3a05",
+        "originalDate" : "2017-09-01",
+        "type" : "internal",
+        "shipping" : 0.0,
+        "tax" : 0.0,
+        "total" : -8197.0,
+        "vendor" : {
+            "vendorOrderId" : 206795,
+            "vendorId" : "55fa1e4398eb4b0c07afaf29",
+            "purchaseOrderNumber" : "N/A",
+            "items" : [ 
+                {
+                    "itemdId" : "B06XCFH95M",
+                    "quantity" : 1,
+                    "sumPrice" : -8197.0,
+                    "price" : -8197.0,
+                    "description" : "PTD400AD with (2) TZe241 Tapes"
+                }
+            ]
+        },
+        "distributions" : [ 
+            {
+                "id" : "597bad202efee83406bd7fa0",
+                "amount" : 8197
+            }
+        ]
+    }
+}

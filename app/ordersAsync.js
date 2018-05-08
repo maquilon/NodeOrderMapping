@@ -120,7 +120,6 @@ function getHistory(order) {
 //     .then(result => console.log('result --->', result))
 //     .catch(e => console.log('Error -->', e))
 
-
 async function start() {
     try{
         let orders = await findOrders(); 
