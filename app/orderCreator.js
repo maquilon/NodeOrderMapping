@@ -28,13 +28,22 @@ async function mapOrders(orders) {
         newOrder.completed  = d,
         newOrder.vendor     = o.order.vendor
 
+        // Calculating totals per distribution
         const dist = o.order.distributions;
-        const accumulatedTotals = {}
+        const accumulatedTotals = [];
         for ( let i = 0; i < dist.length; i++ ) {
             const d = dist[i]
             accumulatedTotals[ d.id ] = (accumulatedTotals[ d.id ] || 0) + d.amount
         }
-        newOrder.distributions = accumulatedTotals;
+
+        const result = []
+        for (keys in accumulatedTotals) {
+            if (hasOwnProperty.call(accumulatedTotals, keys)) {
+                result.push({ "id" : keys, "amount" : accumulatedTotals[keys] });
+            }
+        }
+
+        newOrder.distributions = result;
 
     });
     return newOrder;
@@ -45,7 +54,6 @@ function convertToJSONDate(strDate) {
     var dt = new Date(splitted[0], splitted[1], splitted[2]);
     return new Date(dt);
 }
-
 
 async function start() {
     try {

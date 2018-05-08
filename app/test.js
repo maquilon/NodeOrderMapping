@@ -24,4 +24,14 @@ for ( let i = 0; i < distributions.length; i++ ) {
 }
 console.log('Acumulate --->', accumulatedTotals)
 
+var result = [], prop, i;
+
+for (keys in accumulatedTotals) {
+    if (hasOwnProperty.call(accumulatedTotals, keys)) {
+        result.push({ 'id': keys, 'amount': accumulatedTotals[keys] });
+    }
+}
+
+  console.log('result -->', result)
+
 process.exit();
