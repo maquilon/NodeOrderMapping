@@ -42,7 +42,6 @@ async function mapOrders(orders) {
                 result.push({ "id" : keys, "amount" : accumulatedTotals[keys] });
             }
         }
-
         newOrder.distributions = result;
 
     });
