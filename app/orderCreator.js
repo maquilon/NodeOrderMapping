@@ -40,7 +40,7 @@ function updateOrders(orders) {
 
     // start bulk update
     var bulk = db.orders.initializeUnorderedBulkOp()
-    let itemHash =[];
+    let itemHash = [];
 
     orders.map((o, i) => {
         let incUpdate = {
@@ -61,19 +61,18 @@ function updateOrders(orders) {
             }
         })
 
-        // This is going to find any items that need to be updated based on the items that are returned from the hash 
-        const ori = o.original[0].vendor.items
-        if(ori) {        
-            ori.forEach((oi, i) => {
-            if(itemHash[oi.itemId]){
-                incUpdate["$inc"][`vendor.items.${i}.quantity`] = itemHash[oi.itemdId].quantity;
+        console.log('itemHash -->', itemHash)
+        // This is going to find any items that need to be updated based on the items that are returned from the hash  
+        o.original[0].vendor.items.forEach((oi, i) => {
+            if(itemHash[oi.itemId]) {
+                incUpdate["$inc"][`vendor.items[${i}].quantity`] = itemHash[oi.itemId].quantity;
+                
             }
-        })}
-
+        })
 
         console.log('incUpdate --->', incUpdate);
 
-       // { $set : { "distributions" :  initialDistributionsValue, total: initialTotalValue  }, incUpdate  }
+        // { $set : { "distributions" :  initialDistributionsValue, total: initialTotalValue  }, incUpdate  }
 
     })
 
