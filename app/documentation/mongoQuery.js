@@ -1,3 +1,4 @@
+
 ///////////////////////////////////////////
 // Create a collection called ordersTemp
 ///////////////////////////////////////////
@@ -180,8 +181,21 @@ db.orders.aggregate([{
             "distributions": "$distributions"
         }
     }
-}
-    , {
+},
+
+{
+    $lookup: {
+        from: "orders",
+        localField: "order.vendor.vendorOrderId" ,
+        foreignField: "vendor.vendorOrderId",
+        as: "original"
+
+    }
+},
+
+{
     $out: "ordersTemp"
 }
+
+
 ])

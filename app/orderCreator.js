@@ -7,26 +7,15 @@ async function findOrders() {
 }
 
 async function mapOrders(orders) {
-    let newOrder = {};
+    
     let d = new Date();
 
-    orders.forEach((o, i) => {
-        newOrder.userId     = o._id.userId,
-        newOrder.userName   = o._id.userName,
-        newOrder.status     = o._id.status,
-        newOrder.created    = convertToJSONDate(o._id.date),
-        newOrder.modified   = d,
-        newOrder.shipping   = o._id.shipping,
-        newOrder.shipping   = o._id.shipping,
-        newOrder.tax        = o._id.tax,
-        newOrder.total      = o.order.total,
-        newOrder.schoolId   = o.order.schoolId,
-        newOrder.districtId = o.order.districtId,
-        newOrder.title      = o.order.title,
-        newOrder.discount   = o.order.discount,
-        newOrder.type       = o.order.type,
-        newOrder.completed  = d,
-        newOrder.vendor     = o.order.vendor
+    var newOrders = orders.map((o, i)=>{
+
+        o.order.created = d;
+        o.order.modified = d;
+        o.order.completed = d;
+        o.order.migratedReturns = true;
 
         // Calculating totals per distribution
         const dist = o.order.distributions;
@@ -35,17 +24,19 @@ async function mapOrders(orders) {
             const d = dist[i]
             accumulatedTotals[ d.id ] = (accumulatedTotals[ d.id ] || 0) + d.amount
         }
-
         const result = []
         for (keys in accumulatedTotals) {
             if (hasOwnProperty.call(accumulatedTotals, keys)) {
                 result.push({ "id" : keys, "amount" : accumulatedTotals[keys] });
             }
         }
-        newOrder.distributions = result;
 
+        o.order.distributions = result;
+
+        return o;
     });
-    return newOrder;
+
+    return newOrders;
 }
 
 function convertToJSONDate(strDate) {
@@ -57,8 +48,17 @@ function convertToJSONDate(strDate) {
 async function start() {
     try {
         let tempOrders = await findOrders();
-        let newOrder = await mapOrders(tempOrders);
-        console.log(newOrder);
+        let newOrders = await mapOrders(tempOrders);
+
+        console.log( require("util").inspect(newOrders, false, 10) ); // To display the detail of a property with large objects
+
+        // let itemHash = {};
+        // newOrders.
+
+
+        //bulk updates 
+
+
     } catch (err) {
         console.log('Error -->', err)
     }
@@ -66,3 +66,17 @@ async function start() {
 }
 
 start();
+
+
+
+// var itemHash = {}
+// // Loop from ordersTemp
+// order.vendor.items.forEach((v,i)=>{
+//     if(itemHash[v.itemdId]){
+//         itemHash[v.itemdId]["quantity"] += v.quantity;        
+//     }else{
+//         itemHash[v.itemdId] = {
+//             quantity: v.quantity
+//         }
+//     }
+// }) 
