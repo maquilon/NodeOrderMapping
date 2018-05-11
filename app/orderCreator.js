@@ -36,7 +36,7 @@ async function mapOrders(orders) {
     return newOrders;
 }
 
-function updateOrders(orders) {
+async function updateOrders(orders) {
 
     // start bulk update
     var bulk = db.orders.initializeUnorderedBulkOp()
@@ -61,21 +61,26 @@ function updateOrders(orders) {
             }
         })
 
-        console.log('itemHash -->', itemHash)
         // This is going to find any items that need to be updated based on the items that are returned from the hash  
         o.original[0].vendor.items.forEach((oi, i) => {
-            if(itemHash[oi.itemId]) {
+            if (itemHash[oi.itemId]) {
                 incUpdate["$inc"][`vendor.items[${i}].quantity`] = itemHash[oi.itemId].quantity;
-                
             }
         })
 
-        console.log('incUpdate --->', incUpdate);
+        //console.log('incUpdate --->', incUpdate);
 
-        // { $set : { "distributions" :  initialDistributionsValue, total: initialTotalValue  }, incUpdate  }
-
+        bulk.find({ _id: o.original[0]._id })
+            .updateOne(
+                {
+                    $set: { "distributions": o.original[0].distributions, total: o.original[0].total },
+                    incUpdate
+                }
+            )
     })
 
+    console.log(require("util").inspect(bulk, false, 10));
+    //await bulk.execute()
 }
 
 function convertToJSONDate(strDate) {
