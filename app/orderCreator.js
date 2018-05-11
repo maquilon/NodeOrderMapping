@@ -7,11 +7,10 @@ async function findOrders() {
 }
 
 async function mapOrders(orders) {
-    
     let d = new Date();
+    let itemHash = {};
 
     var newOrders = orders.map((o, i)=>{
-
         o.order.created = d;
         o.order.modified = d;
         o.order.completed = d;
@@ -30,13 +29,23 @@ async function mapOrders(orders) {
                 result.push({ "id" : keys, "amount" : accumulatedTotals[keys] });
             }
         }
-
         o.order.distributions = result;
+
+        // Creating ItemHash table
+        o.order.vendor.items.forEach((v,i) => {
+            if(itemHash[v.itemdId]) {
+                itemHash[v.itemdId]["quantity"] += v.quantity;
+            } else {
+                itemHash[v.itemdId] = {
+                    quantity: v.quantity
+                }
+            }
+        })
 
         return o;
     });
 
-    return newOrders;
+    return { 'newOrders': newOrders, 'itemHash': itemHash };
 }
 
 function convertToJSONDate(strDate) {
@@ -47,17 +56,14 @@ function convertToJSONDate(strDate) {
 
 async function start() {
     try {
+        // Getting the vendor items to be updated on order
         let tempOrders = await findOrders();
-        let newOrders = await mapOrders(tempOrders);
+        let result = await mapOrders(tempOrders); // Return new order and itemHash table (result.newOrders, result.itemHash)
+        
+        console.log( require("util").inspect(result.newOrders, false, 10) ); // To display the detail of a property with large objects
+        //console.log( require("util").inspect(result.itemHash, false, 10) ); // To display the detail of a property with large objects
 
-        console.log( require("util").inspect(newOrders, false, 10) ); // To display the detail of a property with large objects
-
-        // let itemHash = {};
-        // newOrders.
-
-
-        //bulk updates 
-
+        //TODO: bulk updates 
 
     } catch (err) {
         console.log('Error -->', err)
