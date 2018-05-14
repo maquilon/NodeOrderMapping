@@ -36,50 +36,15 @@ async function mapOrders(orders) {
     return newOrders;
 }
 
-async function updateOrders(orders) {
 
-    // start bulk update
+async function saveOrders(orders) {
     var bulk = db.orders.initializeUnorderedBulkOp()
-    let itemHash = [];
 
     orders.map((o, i) => {
-        let incUpdate = {
-            $inc: {
-                shipping: o.order.shipping,
-                tax: o.order.tax
-            }
-        };
-
-        // Creating ItemHash table with vendor items
-        o.order.vendor.items.forEach((v, i) => {
-            if (itemHash[v.itemdId]) {
-                itemHash[v.itemdId]["quantity"] += v.quantity;
-            } else {
-                itemHash[v.itemdId] = {
-                    quantity: v.quantity
-                }
-            }
-        })
-
-        // This is going to find any items that need to be updated based on the items that are returned from the hash  
-        o.original[0].vendor.items.forEach((oi, i) => {
-            if (itemHash[oi.itemId]) {
-                incUpdate["$inc"][`vendor.items[${i}].quantity`] = itemHash[oi.itemId].quantity;
-            }
-        })
-
-        //console.log('incUpdate --->', incUpdate);
-
-        bulk.find({ _id: o.original[0]._id })
-            .updateOne(
-                {
-                    $set: { "distributions": o.original[0].distributions, total: o.original[0].total },
-                    incUpdate
-                }
-            )
+        bulk.insert(o.order)
     })
 
-    console.log(require("util").inspect(bulk, false, 10));
+    console.log('Bulk --->',require("util").inspect(bulk, false, 10));
     //await bulk.execute()
 }
 
@@ -94,8 +59,8 @@ async function start() {
         // Getting the vendor items to be updated on order
         let tempOrders = await findOrders();
         let newOrders = await mapOrders(tempOrders);
-        let updated = updateOrders(newOrders);
-        
+        let saved = saveOrders(newOrders);
+
         // To display the detail of a property with large objects
         //console.log(require("util").inspect(newOrders, false, 10));
 
