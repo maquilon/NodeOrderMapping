@@ -37,12 +37,11 @@ async function mapOrders(orders) {
 }
 
 async function updateOrders(orders) {
-
     // start bulk update
     var bulk = db.orders.initializeUnorderedBulkOp()
     let itemHash = [];
 
-    orders.map((o, i) => {
+    orders.map((o, i) => { 
         let incUpdate = {
             $inc: {
                 shipping: o.order.shipping,
@@ -68,13 +67,11 @@ async function updateOrders(orders) {
             }
         })
 
-        //console.log('incUpdate --->', incUpdate);
-
         bulk.find({ _id: o.original[0]._id })
             .updateOne(
                 {
                     $set: { "distributions": o.original[0].distributions, total: o.original[0].total },
-                    incUpdate
+                    incUpdate                
                 }
             )
     })
