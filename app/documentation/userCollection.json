@@ -1,0 +1,83 @@
+{
+    "_id" : ObjectId("55e5de6e63e94fdd16d2a8c7"),
+    "firstName" : "Cindy",
+    "lastName" : "Cochran",
+    "profile" : {
+        "email" : "cindy.cochran@cmcss.net"
+    },
+    "shippingAddresses" : [ 
+        {
+            "address" : "430 Greenwood Avenue",
+            "city" : "Clarksville",
+            "state" : "TN",
+            "zip" : "37040",
+            "default" : true,
+            "shortId" : "f3uth2w3bs"
+        }
+    ],
+    "role" : {
+        "type" : "teacher",
+        "info" : {
+            "school" : {
+                "_id" : "55e4de24c588d547062d3ed6",
+                "districtId" : "55e4de24c588d547062d3eae",
+                "schoolName" : "Alternative School",
+                "address" : "430 Greenwood Avenue",
+                "city" : "Clarksville",
+                "state" : "TN",
+                "zip" : "37040",
+                "phone" : "9315425057",
+                "altPhone" : "NULL",
+                "fax" : "9315033411"
+            }
+        }
+    },
+    "featurePermissions" : {
+        "shop" : {
+            "amazon" : {},
+            "concierge" : {},
+            "default_vendor" : {},
+            "ace" : {},
+            "parent_usa" : {},
+            "staples" : {}
+        },
+        "prepaid_card" : {},
+        "reports" : {
+            "personal" : {}
+        },
+        "settings" : {},
+        "user_page" : {}
+    },
+    "purses" : {
+        "579a40549cec5f1a33011ebb" : {
+            "amount" : 0,
+            "name" : "Default Purse",
+            "description" : "This is your unrestricted purse",
+            "default" : true
+        }
+    },
+    "savedAccounts" : [],
+    "security" : {
+        "questionId" : "4",
+        "question" : "What is your favorite sports team?",
+        "answer" : "Cowboys"
+    },
+    "sensitive" : {
+        "username" : "cindy.cochran@cmcss.net",
+        "password" : "54d5c7a8393c381776e0bee2349bfef8",
+        "verified" : false,
+        "verifiedId" : "ab142b512bc014318ef33c0dd7c95215",
+        "dateRegistered" : ISODate("2015-11-30T12:00:00.242Z"),
+        "active" : {
+            "status" : true
+        }
+    },
+    "user_page" : {
+        "image" : "https://s3.amazonaws.com/cdn.classwallet.com/img/users/default_profile_image.jpg",
+        "description" : "Please add your user page Description here.",
+        "id" : "Cindy.Cochran.312"
+    },
+    "customerId" : "579000a580be4c0b8bb744b9",
+    "reset" : false,
+    "transactions" : []
+}
