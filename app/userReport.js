@@ -40,16 +40,16 @@ async function createReport(users, districts) {
 
         userList.push(
             {
-                "type": u.type,
-                "district": distName,
-                "districtState": distState,
-                "userIdGl": u.userIdGl,
                 "firstName": u.firstName,
                 "lastName": u.lastName,
                 "email": u.email,
+                "type": u.type,
+                "userIdGl": u.userIdGl,
+                "district": distName,
+                "districtState": distState,
                 "school": u.school,
-                "amount": u.purses.v.amount,
-                "distribution": u.purses.v.name
+                "distribution": u.purses.v.name,
+                "amount": u.purses.v.amount
             }
         )
     })
@@ -63,7 +63,7 @@ async function findDistricts() {
     return districts;
 }
 
-async function start() {
+async function main() {
     try {
         let districts = await findDistricts();
         let users = await findUsers();
@@ -77,4 +77,4 @@ async function start() {
     }
 }
 
-start();
+main();
